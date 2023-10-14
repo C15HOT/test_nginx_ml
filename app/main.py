@@ -16,9 +16,20 @@ CONTAINER = os.getenv('CONTAINER')
 @app.get("/")
 def test():
     print(f'Начало работы модуля {CONTAINER}')
-    time.sleep(30)
+    import time
+    start_time = time.time()
+    print('start')
+    import sys
+    sys.set_int_max_str_digits(0)
+
+    a = 9999999999999 ** 99999
+    print(str(a)[1:2])
+    print("--- %s seconds ---" % (time.time() - start_time))
+    print('end')
     print(f'Конец работы модуля {CONTAINER}')
     return {"Работа": "Закончена"}
+
+
 
 def main() -> None:
     run(
