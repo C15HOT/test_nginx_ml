@@ -53,7 +53,7 @@ services:
   api4:
     container_name: "api4"
     build:
-      context: .
+      context: ../speechup_buffer
       dockerfile: Dockerfile
     environment:
       CONTAINER: FOURTH
